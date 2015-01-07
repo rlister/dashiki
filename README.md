@@ -13,6 +13,16 @@ ln -s cfg-examples cfg
 rackup
 ```
 
+## Docker
+
+Comes with a Dockerfile to build your own image, or pull from docker
+registry:
+
+```
+docker pull rlister/dashiki
+docker run -it -p 5000:5000 -v /path/to/my/cfg:/app/cfg rlister/dashiki
+```
+
 ## What's it look like?
 
 ![Dashiki Screenshot](https://raw.github.com/brewster/assets/master/img/dashiki/screenshot.png "Dashiki Logstash Elasticsearch Dashboard")
@@ -169,7 +179,7 @@ the object returned.
 
 Say your browser can't reach a given data source with an XHR, because
 of firewall restrictions or same-origin policy (which you are unable
-to configure around on the source for some reason). Set 
+to configure around on the source for some reason). Set
 ```proxy: true``` for the given stat and dashboard will route the
 request through a simple GET proxy on the dashboard server.
 
